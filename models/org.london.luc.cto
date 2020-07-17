@@ -1,30 +1,30 @@
 /**
- * My commodity trading network
+ * London-Utility-Coin trading network
  */
 namespace org.london.luc
-asset Commodity identified by tradingSymbol {
-    o String tradingSymbol
-    o String description
-    o String mainExchange
+
+//Asset object for holding luc
+asset Coin identified by idCoin {
+    o String idCoin
     o Double quantity
-    --> Trader owner
+    --> User owner
 }
-participant Trader identified by tradeId {
-    o String tradeId
+//The utility user who is collecting crypto coin
+participant User identified by idUser {
+    o String idUser
     o String firstName
     o String lastName
+    o String email
 }
+//Transaction for moving luc
 transaction Trade {
-    --> Commodity commodity
-    --> Trader newOwner
+    --> Coin coin
+    --> User newOwner
 }
+//Notifications for trading luc
 event TradeNotification {
-    --> Commodity commodity
+    --> Coin coin
 }
-
-transaction RemoveHighQuantityCommodities {
-}
-
 event RemoveNotification {
-    --> Commodity commodity
+    --> Coin coin
 }

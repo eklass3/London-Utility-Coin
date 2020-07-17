@@ -3,7 +3,7 @@
     "composer": "^0.20.9"
   },
   "name": "london-utility-coin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Coin which creates incentive for utility to users to save!",
   "scripts": {
     "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/london-utility-coin.bna",
