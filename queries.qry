@@ -1,0 +1,29 @@
+/** Sample queries for Commodity Trading business network
+*/
+
+query selectCommodities {
+  description: "Select all commodities"
+  statement:
+      SELECT org.london.luc.Commodity
+}
+
+query selectCommoditiesByExchange {
+  description: "Select all commodities based on their main exchange"
+  statement:
+      SELECT org.london.luc.Commodity
+          WHERE (mainExchange==_$exchange)
+}
+
+query selectCommoditiesByOwner {
+  description: "Select all commodities based on their owner"
+  statement:
+      SELECT org.london.luc.Commodity
+          WHERE (owner == _$owner)
+}
+
+query selectCommoditiesWithHighQuantity {
+  description: "Select commodities based on quantity"
+  statement:
+      SELECT org.london.luc.Commodity
+          WHERE (quantity > 60)
+}
