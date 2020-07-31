@@ -11,16 +11,30 @@ asset Coin identified by idCoin {
 }
 //The utility user who is collecting crypto coin
 participant User identified by idUser {
-    o String idUser
+    o String idUser//The account id.
     o String firstName
     o String lastName
     o String email
+    o String phoneNumber
+    o Double consumption//The daily consumption of the utility (in abstract units)
 }
 //Transaction for moving luc
 transaction Trade {
     --> Coin coin
     --> User newOwner
 }
+
+//Transaction for awarding coins
+transaction AwardCoin {
+   --> User owner
+}
+
+//Transaction for updated user utility consumption
+transaction UpdateConsumption {
+  	o Double consumption//The amount the user consumed
+ 	--> User user 
+}
+
 //Notifications for trading luc
 event TradeNotification {
     --> Coin coin
