@@ -9,6 +9,19 @@ asset Coin identified by idCoin {
     o Double quantity
     --> User owner
 }
+//Asset object for holding conversions of Watt Hour to LUC
+asset WhtoLUC identified by idWhtoLUC {
+ 	o String idWhtoLUC
+    o Double conversion
+    o Long timestamp
+}
+//Aset object for holder conversions of LUC to CAD
+asset LUCtoCAD identified by idLUCtoCAD {
+ 	o String idLUCtoCAD
+    o Double conversion
+    o Long timestamp
+}
+
 //The utility user who is collecting crypto coin
 participant User identified by idUser {
     o String idUser//The account id.
@@ -17,6 +30,7 @@ participant User identified by idUser {
     o String email
     o String phoneNumber
     o Double consumption//The daily consumption of the utility (in abstract units)
+    o Boolean admin//whether the account is an admin or not
 }
 //Transaction for moving luc
 transaction Trade {
@@ -35,10 +49,3 @@ transaction UpdateConsumption {
  	--> User user 
 }
 
-//Notifications for trading luc
-event TradeNotification {
-    --> Coin coin
-}
-event RemoveNotification {
-    --> Coin coin
-}
