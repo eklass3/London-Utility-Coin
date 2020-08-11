@@ -5,7 +5,7 @@ This is the complete backend code for the London Utility Coin (LUC) Hyperledger 
 LUC uses Hyperledger Fabric Blockchain with the Hyperledger Composer framework.
 
 ### Other Projects using LUC
--  London Utility Coin Portal (LUC front-end access portal).
+-  [London Utility Coin Portal (LUC front-end access portal).](https://github.com/eklass3/LUC-Console)
 - [London Utility Coin Arduino Package (LUC meter hardware code)](https://github.com/eklass3/LUC-Arduino).
 
 ## Installation
