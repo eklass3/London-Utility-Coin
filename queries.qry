@@ -18,5 +18,27 @@ query selectCoinByOwner {
   description: "Select all LUC's based on their owner"
   statement:
       SELECT org.london.luc.Coin
-          WHERE (owner.idUser == _$idUser)
+          WHERE (owner == _$idUser)
+}
+
+//This is used for logging in. Only temperary.
+query selectAccountByEmail {
+  description: "Select a user based on their email"
+  statement:
+    SELECT org.london.luc.User
+      WHERE (email == _$email)
+}
+
+query selectTradesByUserId {
+  description: "Select trades based on user id"
+  statement:
+    SELECT org.london.luc.Trade
+      WHERE (oldOwner == _$idUser)
+}
+
+query selectAwardsByUserId {
+  description: "Select awards based on user id"
+  statement:
+    SELECT org.london.luc.AwardCoin
+      WHERE (owner == _$idUser)
 }

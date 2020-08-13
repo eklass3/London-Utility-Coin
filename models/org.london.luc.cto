@@ -36,6 +36,7 @@ participant User identified by idUser {
 transaction Trade {
     --> Coin coin
     --> User newOwner
+    --> User oldOwner
 }
 
 //Transaction for awarding coins
