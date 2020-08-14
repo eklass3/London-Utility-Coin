@@ -63,9 +63,3 @@ composer-rest-server
 ```
 
 *LUC runs on the hyperledger composer framework. For more detailed (and better) information on many of these commands see the [composer documentation.]([https://hyperledger.github.io/composer/latest/index.html](https://hyperledger.github.io/composer/latest/index.html))*
-
-## Contributing
-LUC is run by a undergraduate student! I would love to receive contributions towards this project 
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
