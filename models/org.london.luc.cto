@@ -34,7 +34,7 @@ participant User identified by idUser {
 }
 //Transaction for moving luc
 transaction Trade {
-    --> Coin coin
+      o Double amount
     --> User newOwner
     --> User oldOwner
 }

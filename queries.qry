@@ -33,7 +33,7 @@ query selectTradesByUserId {
   description: "Select trades based on user id"
   statement:
     SELECT org.london.luc.Trade
-      WHERE (oldOwner == _$idUser)
+      WHERE (oldOwner == _$idUser OR newOwner == _$idUser)
 }
 
 query selectAwardsByUserId {
